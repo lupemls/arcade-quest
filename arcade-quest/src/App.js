@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import UpdateBtn from "./components/UpdateBtn";
 import Update from "./components/Update";
+import Add from "./components/Add";
 
 function App() {
   return (
-    // <UpdateBtn />,
-    <Update />
+    // <Update />
+    <Add />
   );
 }
 
