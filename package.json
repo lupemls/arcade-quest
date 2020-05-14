@@ -14,8 +14,10 @@
     "@testing-library/user-event": "^7.2.1",
     "@types/googlemaps": "^3.39.4",
     "@types/markerclustererplus": "^2.1.33",
+    "axios": "^0.19.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-geocode": "^0.2.1",
     "react-google-maps": "^9.4.5",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1"
