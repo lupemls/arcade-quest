@@ -22,7 +22,6 @@ function Update(props) {
                     <option>Racing</option>
                     <option>Rhythm</option>
                     <option>Redemption/Ticket</option>
-                    <option>Crane Game</option>
                     <option>Other</option>
                 </select>
                 

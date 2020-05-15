@@ -37,6 +37,15 @@ function Add(props) {
                 <label>Zip Code</label>
                 <input type="text" id="zip"/>
 
+                <br></br>
+
+                <label>Payment Method</label>
+                <select id="payment">
+                    <option></option>
+                    <option>Quarters</option>
+                    <option>Tokens</option>
+                    <option>Card</option>
+                </select>
 
                 <input type="submit" id="submit"></input>
             </form>
