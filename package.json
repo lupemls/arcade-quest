@@ -20,7 +20,10 @@
     "react-geocode": "^0.2.1",
     "react-google-maps": "^9.4.5",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.9"
   },
   "scripts": {
     "predeploy": "npm run build",
