@@ -1,7 +1,19 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = (sequelize, DataTypes) => {
     const Arcade = sequelize.define('Arcade', {
-        game: DataTypes.STRING,
-        type: DataTypes.STRING
+        game: 
+            {                
+                type: DataTypes.STRING,
+                allowNull: false
+            },
+        type: 
+            {                
+                type: DataTypes.STRING,
+                allowNull: false
+            }
     });
+
+    Arcade.associate = (models) => {
+        Arcade.belongsToMany(models.Business, {through : models.BusinessArcade});
+    }
     return Arcade; 
 }; 
