@@ -1,11 +1,11 @@
 import React from 'react'
 
-function InfoCard(){
+function InfoCard(props){
     return(
           <div class="d-flex justify-content-center">
           <div id="card-one">
                 <div class="card">
-                      <img src="./image/arcade1.jpg" class="card-img-top" alt="..."/>
+                      <img src={props.src} class="card-img-top" alt="..."/>
                       <div class="card-body">
                         <h2 class="card-title">Card Title</h2>
                         <p class="card-text">Lorem ipsum dolor sit amet consectetur. </p>
