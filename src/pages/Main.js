@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Header from "../components/Header";
-import NavigationBar from "../components/NavigationBar";
+// import NavigationBar from "../components/NavigationBar";
 import WrappedMap from "../components/Map";
 import InfoCard from "../components/InfoCard";
 import PlaceHolder from "../components/srcassets/bg.jpg";
@@ -9,7 +9,7 @@ import PlaceHolder from "../components/srcassets/bg.jpg";
 function Main() {
   const [position, setPosition] = useState({ lat: 47.6101, lng: -122.2015 });
   const [mark, setMark] = useState({});
-  const [selctedMark, setSelectedMark] = useState(null);
+  // const [selctedMark, setSelectedMark] = useState(null);
   const [newSrc, setNewsrc] = useState(PlaceHolder);
   const [newTitle, setNewTitle] = useState(null);
 
@@ -19,7 +19,7 @@ function Main() {
     // console.log(mark.latLng.lat())
     //   setSelectedMark(
     setNewsrc(
-      `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${mark}key=AIzaSyCAGBQZGrklbGFY3rBelRBQ_m0yzc4pd5w`
+      `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${mark}&key=AIzaSyCAGBQZGrklbGFY3rBelRBQ_m0yzc4pd5w`
     );
     // axios.get(
     //   `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAevdYXaOo0OYA9Ulo7bBxnJqutsHkxEAsmpaY9KOMtPx5iO7WNL1S54aUSb1KJlspMD8ZLDfJwp1HH7JnWeeJhKEvqHFng-_2oaP_ZP9mdVNUZHJbLR8-E4-T57Ppo_vlEhDKE-dq-M08LQd4H2QMwtrhGhRejRj9uclqDhylysSKhe7yBjEiXg&key=AIzaSyCAGBQZGrklbGFY3rBelRBQ_m0yzc4pd5w
@@ -36,11 +36,12 @@ function Main() {
 
   useEffect(() => {
     setNewTitle(
-      "CmRaAAAAevdYXaOo0OYA9Ulo7bBxnJqutsHkxEAsmpaY9KOMtPx5iO7WNL1S54aUSb1KJlspMD8ZLDfJwp1HH7JnWeeJhKEvqHFng-_2oaP_ZP9mdVNUZHJbLR8-E4-T57Ppo_vlEhDKE-dq-M08LQd4H2QMwtrhGhRejRj9uclqDhylysSKhe7yBjEiXg&key=AIzaSyCAGBQZGrklbGFY3rBelRBQ_m0yzc4pd5w"
+      "CmRaAAAAo9VNMjiPGHAzj6cB_6eND_GMC3VSNm9QubdOATHrTk7DSn_kBBaTLBpuXKB0fN0YfEttbFtl9hihsuIzeW7Cp6M15-kqVV2mpCo16yDx4asYM2lGCmQNzaq2F2MiwT-aEhD6FlARNGB9fMjubEmPTFttGhSjrWOl2musD22MApmOQuxl5Qf4Cw"
     );
+    
 
     axios
-      .get(`http://localhost:8080/api/allBusinesses`)
+      .get(`localhost:8080/api/allBusinesses`)
       .then((response) => {
         console.log(response);
       })
@@ -70,11 +71,11 @@ function Main() {
   return (
     <div>
       <Header />
-      <NavigationBar></NavigationBar>
+      {/* <NavigationBar></NavigationBar> */}
       <div className="container">
         <div className="row">
           <div className="col-8">
-            <div class="map-div" style={{ width: "750px", height: "500px" }}>
+            <div className="map-div" style={{ width: "750px", height: "500px" }}>
               <WrappedMap
                 title={newTitle}
                 mark={mark}
