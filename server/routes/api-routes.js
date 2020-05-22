@@ -30,7 +30,7 @@ module.exports = app => {
     })
 
     //gets all businesses
-    app.get("api/allBusinesses", (req,res) => {
+    app.get("/api/allBusinesses", (req,res) => {
         db.Business.findAll({})
             .then(result => {
                 res.json(result)
@@ -38,7 +38,7 @@ module.exports = app => {
     })
 
     //gets all arcade machines
-    app.get("api/allArcades", (req,res) => {
+    app.get("/api/allArcades", (req,res) => {
         db.Arcade.findAll({})
             .then(result => {
                 res.json(result)
@@ -47,7 +47,7 @@ module.exports = app => {
 
     //gets arcade machines at a given business
     //????????????????
-    app.get("api/businessArcades", (req,res) => {
+    app.get("/api/businessArcades", (req,res) => {
         db.BusinessArcade.findAll({
             where: {
                 BusinessId: req.query.id
