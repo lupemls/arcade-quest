@@ -50,7 +50,7 @@ module.exports = app => {
     app.get("/api/businessArcades", (req,res) => {
         db.BusinessArcade.findAll({
             where: {
-                BusinessId: req.query.id
+                BusinessId: req.params.id
             }
         }).then(result => {
             res.json(result)
