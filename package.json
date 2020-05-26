@@ -1,5 +1,6 @@
 {
-  "name": "arcade-quest",
+  "homepage": "http://onijimbo.github.io",
+  "name": "react-portfolio",
   "version": "0.1.0",
   "private": true,
   "engines": {
@@ -16,7 +17,6 @@
     "axios": "^0.19.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-geocode": "^0.2.1",
     "react-google-maps": "^9.4.5",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1"
@@ -45,7 +45,8 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^2.2.0",
-    "nodemon": "^2.0.4"
-  }
+    "@svgr/webpack": "^5.4.0",
+    "gh-pages": "^2.2.0"
+  },
+  "proxy": "http://localhost:8080"
 }

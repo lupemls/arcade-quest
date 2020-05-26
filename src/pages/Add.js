@@ -1,18 +1,21 @@
 //Used to add a new location
-import Header from "../components/Header"
+
 import React from "react";
 import State from "./State";
+import NavigationBar from '../components/NavigationBar';
+import Header from '../components/Header';
 
 
 
 function Add(props) {
     return (
-        <div className="wrapper">
-            
-            <Header />
 
-         
-        <div>
+      <div>
+        <NavigationBar></NavigationBar>
+        
+      <div className="wrapper">
+        <Header></Header>
+
             <form className="newLocation">
                 <label>Name of Business</label>
                 <input type="text" id="business"/>
@@ -26,7 +29,7 @@ function Add(props) {
                     <option>Restaurant</option>
                     <option>Bar</option>
                     <option>Arcade</option>
-                    <option>Movie Theater</option>
+                    <option>Pizzeria    </option>
                     <option>Other</option>
                 </select>
 
@@ -58,7 +61,8 @@ function Add(props) {
                 <input type="submit" id="submit"></input>
             </form>
          </div>
-    </div> 
+    </div>
+
     )
 }
 
