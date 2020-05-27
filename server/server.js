@@ -5,7 +5,7 @@
 // *** Dependencies
 // =============================================================
 const express = require("express");
-const cors = require("cors");
+let cors = require("cors");
 
 
 // Sets up the Express App
@@ -23,8 +23,12 @@ app.use(express.json());
 // Static directory
 app.use(express.static("public"));
 
+
 //Enable CORS
-app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:3000/'],
+  credentials: true
+}));
 
 // Routes
 // =============================================================

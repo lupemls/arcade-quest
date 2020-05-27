@@ -1,11 +1,15 @@
 {
   "development": {
     "username": "root",
-    "password": "password",
+    "password": "assbutt1",
     "database": "arcade_db",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "operatorsAliases": false
+    "operatorsAliases": false,
+    "dialectOptions": 
+      {
+        "decimalNumbers": true
+      }
   },
   "test": {
     "username": "root",
