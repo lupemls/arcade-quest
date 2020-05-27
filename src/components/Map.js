@@ -29,6 +29,18 @@ function Map(props) {
   // }, []);
   return (
     <GoogleMap defaultZoom={10} center={props.position}>
+      {props.res.map((place) => (
+        <Marker
+          key={place.id}
+          title={place.photoRef}
+          position={{
+            lat: place.lat,
+            lng: place.long,
+          }}
+          icon={"http://maps.google.com/mapfiles/ms/icons/green-dot.png"}
+          onClick={() => props.handleClick(place.id)}
+        />
+      ))}
       {props.bar.map((place) => (
         <Marker
           key={place.id}

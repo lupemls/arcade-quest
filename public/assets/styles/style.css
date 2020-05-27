@@ -74,6 +74,10 @@ height: 550px;
 
     }
 
+.gameList{
+    overflow: scroll;
+}    
+
 @media  (max-width:700px){
 
     .map{
