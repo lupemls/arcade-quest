@@ -4,10 +4,10 @@ import { NavLink } from "react-router-dom";
 class NavigationBar extends React.Component {
     render() {
       return (
-        <div>
+        <div className="nav-one">
             <div>
               <div>
-                <nav className="navbar navbar-expand-md bg-dark navbar-dark">
+                <nav className="navbar navbar-expand-md bg-black navbar-dark">
                   <div className="container-fluid">
                     <NavLink className="navbar-brand" exact to="/" >Arcade Quest</NavLink>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">

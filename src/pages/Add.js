@@ -2,13 +2,24 @@
 
 import React from "react";
 import State from "./State";
+import NavigationBar from '../components/NavigationBar';
+import Header from '../components/Header';
+
+
 
 function Add(props) {
     return (
-        <div>
+
+      <div>
+        <NavigationBar></NavigationBar>
+        
+      <div className="wrapper">
+        <Header></Header>
+
             <form className="newLocation">
                 <label>Name of Business</label>
                 <input type="text" id="business"/>
+            
                 
                 <br></br>
 
@@ -49,7 +60,9 @@ function Add(props) {
 
                 <input type="submit" id="submit"></input>
             </form>
-        </div>
+         </div>
+    </div>
+
     )
 }
 
