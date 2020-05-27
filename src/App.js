@@ -2,6 +2,8 @@ import React from 'react';
 import Main from './pages/Main'
 import Add from './pages/Add'
 import Update from './pages/Update'
+import SignUp from './pages/SignUp';
+import Login from './pages/Login';
 
 
 
@@ -20,6 +22,12 @@ function App() {
           </Route>
           <Route path='/Update'>
             <Update />
+          </Route>
+          <Route path='/Login'>
+            <Login />
+          </Route>
+          <Route path='/SignUp'>
+            <SignUp />
           </Route>
         </Switch>
       </div>

@@ -1,28 +1,53 @@
 import Header from "../components/Header"
 import React from "react";
+import axios from "axios";
+import {withRouter} from "react-router-dom";
 
-function Login(props) {
-    return(
-        <div className="wrapper">
-            <Header/>
+class Login extends React.Component {
+    handleSubmit(e){
+        e.preventDefault();
+        const username = e.target.username.value.trim();
+        const password = e.target.password.value.trim();
 
-            <div>
-                <form className="loginForm">
-                    <label>Username</label>
-                    <input type="text" id="username"/>
+        if(!username || !password){
+            return;
+        }
 
-                    <br></br>
+        this.login(username, password);
+    }
+    
+    login(username, password) {
+        axios
+            .post("/api/login", {
+                username, password
+            })
+            this.props.history.push("/Main")
+            
+    }
 
-                    <label>Password</label>
-                    <input type="text" id="password"/>
+    render() {
+        return(
+            <div className="wrapper">
+                <Header/>
 
-                    <br></br>
+                <div>
+                    <form className="loginForm" onSubmit={this.handleSubmit.bind(this)}>
+                        <label>Username</label>
+                        <input type="text" id="username"/>
 
-                    <input value="Login" type="submit" id="submit"/>
-                </form>
+                        <br></br>
+
+                        <label>Password</label>
+                        <input type="password" id="password"/>
+
+                        <br></br>
+
+                        <input value="Login" type="submit" id="submit"/>
+                    </form>
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
 
-export default Login;
+export default withRouter(Login);
