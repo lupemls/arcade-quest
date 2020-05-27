@@ -2,14 +2,21 @@
 Project 3 with Greivin, Matt, Riley and Violet.
 
 
-Updates:
+Updates/To-do :
+Violet may 27
 
-- Combined dependencies together, will need to be installed tho
-- added configs folder
-- added models folder
-- combined all Component pages into folder
-- combined 
-- Navigationbar.jsx needs to be combined with Index.js
-- removed test pages
-- IN THE PAGES FOLDER: Home.jsx page will need to be possibly be combined with the Main.js
-- 
+- Added links to navbar (NavigationBar.js)
+Links need to be linked to proper pages
+Sign Up/Log In page needs to float right
+
+- Edited search bar (style.css)
+Search bar needs to be added with hover effect
+
+- Footer needs to be added
+
+- Map Legend key for
+arcade
+bar
+restaurant
+other
+needs to be placed below map
