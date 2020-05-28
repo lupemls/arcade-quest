@@ -16,7 +16,7 @@ function Add(props) {
     let history = useHistory()
 
     function handleChange(e){
-        console.log(e.target.value)
+        // console.log(e.target.value)
         setData({...data, [e.target.id]: e.target.value});
     };
 

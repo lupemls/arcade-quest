@@ -15,20 +15,28 @@ class NavigationBar extends React.Component {
                     </button>
                     <div className="collapse navbar-collapse" id="collapsibleNavbar">
                       <ul className="nav navbar-nav">
-                        <li className="nav-item">
-                          <NavLink className="nav-link" exact to="/" >Index</NavLink>
-                        </li>
+                        
+                          
+                          <NavLink className="nav-link" exact to="/Add" >Add</NavLink>
+                          
+
+                        
                       </ul>
-  
+                      
   
                       
-                    </div><input type="text" className="input" placeholder="Search..." />
+                    </div>
                     
                     
+                    
+                    <input type="text" className="input" placeholder="Search..." />    
+
                     <form inline>
               <form type="text" placeholder="Search" className="mr-sm-2" />
-        <button variant="outline-success">Search</button>
+        <button class="buttons" variant="outline-light" type="submit"> SEARCH </button>
   </form>
+
+  
   
                   </div>
   

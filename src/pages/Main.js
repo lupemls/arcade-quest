@@ -11,7 +11,7 @@ const defaultTitle =
   {
     name: 'Arcade Quest',
     url: '*'
-    
+
   }
 
 const defaultGames = [
@@ -49,7 +49,7 @@ function Main() {
 
 
   function handleMarkerClick(mark) {
-    console.log(mark);
+    // console.log(mark);
 
     axios.get(`/api/businessArcades/${mark}`).then((response) => {
       // console.log(response.data.photoRef);

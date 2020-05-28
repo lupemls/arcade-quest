@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from 'react-router-dom'
 
 function InfoCard(props) {
+  let id = props.title.id;
+  console.log(id)
+
   return (
     <div class="d-flex float-right">
       <div id="main-card">
@@ -11,9 +14,7 @@ function InfoCard(props) {
             <a href={props.title.url}>
               <h2 class="card-title">{props.title.name}</h2>
             </a>
-            <Link to={{pathname: "/Update", idProps: {
-              name: "this is working"
-            }}}>Update Games!</Link>
+            <Link to={`/Update/${id}`}>Update Games!</Link>
           </div>
          
             <ul class="list-group list-group-flush">
