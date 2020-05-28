@@ -17,8 +17,12 @@ app.use(express.json());
 // Static directory
 app.use(express.static("public"));
 
+
 //Enable CORS
-app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:3000/'],
+  credentials: true
+}));
 
 // We need to use sessions to keep track of our user's login status
 app.use(

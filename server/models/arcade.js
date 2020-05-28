@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
 
     Arcade.associate = (models) => {
         Arcade.belongsToMany(models.Business, {through : models.BusinessArcade});
+        
     }
     return Arcade; 
 }; 
