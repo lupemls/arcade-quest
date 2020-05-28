@@ -14,7 +14,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Switch>
-          <Route exact path={['/','/Main']}>
+          <Route path='/Main'>
             <Main />
           </Route>
           <Route path='/Add'>
@@ -23,7 +23,7 @@ function App() {
           <Route path='/Update'>
             <Update />
           </Route>
-          <Route path='/Login'>
+          <Route exact path={['/', '/login']}>
             <Login />
           </Route>
           <Route path='/SignUp'>

@@ -1,18 +1,16 @@
-import Header from "../components/Header"
+// import Header from "../components/Header"
 import React from "react";
+import Logo from '../images/LogoAQ1.svg'
 import axios from "axios";
 import {withRouter} from "react-router-dom";
+
 
 class SignUp extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
-        // console.log("nanners");
         let username = e.target.username.value;
         let password = e.target.password.value;
         
-        // console.log(e.target.username.value);
-        // console.log(e.target.password.value);
-
         if(!username || !password){
             return;
         }
@@ -37,26 +35,41 @@ class SignUp extends React.Component {
 
     render() {
         return(
-            <div className="wrapper">
-                <Header/>
+            <div class="login-box">
+                <img class="avatar" src={Logo} alt="Arcade-quest"></img>
+                <h1>Sign Up Here</h1>
+                <form onSubmit={this.handleSubmit.bind(this)}>
+                    <label for="username">Username</label>
+                    <input type="text" placeholder="Enter Username" id="username"/> 
 
-                <div>
-                    <form className="signUpForm" onSubmit={this.handleSubmit.bind(this)}>
-                        <label>Username</label>
-                        <input type="text" id="username" name="username"/>
+                    <label for="password">Password</label>
+                    <input type="password" placeholder="Enter Password" id="password"/>
+                    <input type="submit" value="Sign Up"/>
 
-                        <br></br>
+                    <a href="/Login">Already have an account?</a>
 
-                        <label>Password</label>
-                        <input type="password" id="password" name="password"/>
-
-                        <br></br>
-
-                        <input value="Sign Up" type="submit" id="submit"/>
-                    </form>
-                </div>
+                </form>
             </div>
+            
         )
+
+        // return(
+        //         <div>
+        //             <form className="signUpForm" onSubmit={this.handleSubmit.bind(this)}>
+        //                 <label>Username</label>
+        //                 <input type="text" id="username" name="username"/>
+
+        //                 <br></br>
+
+        //                 <label>Password</label>
+        //                 <input type="password" id="password" name="password"/>
+
+        //                 <br></br>
+
+        //                 <input value="Sign Up" type="submit" id="submit"/>
+        //             </form>
+        //         </div>
+        // )
     }
 }
 
