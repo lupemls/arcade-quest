@@ -1,10 +1,7 @@
 const db = require("../models");
-<<<<<<< HEAD
 const passport = require("../config/passport");
-=======
 let cors = require("cors");
 const axios = require("axios");
->>>>>>> origin/server2
 
 //CORS options
 var corsOptions = {
