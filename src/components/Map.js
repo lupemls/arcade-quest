@@ -8,27 +8,22 @@ import {
 // import axios from 'axios'
 // import Geocode from "react-geocode";
 function Map(props) {
-  // const [ position, setPosition ] = useState({lat: 47.6101, lng: -122.2015});
-  // const [ mark, setMark ] = useState({})
-
-  // useEffect(()=>{
-  //     axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=916+S+3rd+St,+Renton,+Wa&key=AIzaSyCAGBQZGrklbGFY3rBelRBQ_m0yzc4pd5w`)
-  //     .then(response =>{
-  //         console.log(response.data.results[0].geometry.location)
-  //         let {lat, lng} = response.data.results[0].geometry.location
-  //         setMark({lat: lat, lng: lng});
-  //     })
-  //     .catch(err =>{
-  //         console.log('this yo' + err)
-  //     })
-  //     navigator.geolocation.getCurrentPosition((location)=>{
-  //        let {latitude, longitude} = location.coords
-  //        setPosition({lat: latitude, lng: longitude});
-  //     //    console.log( location.coords)
-  //     });
-  // }, []);
+  
   return (
     <GoogleMap defaultZoom={10} center={props.position}>
+      
+      {props.res.map((place) => (
+        <Marker
+          key={place.id}
+          title={place.photoRef}
+          position={{
+            lat: place.lat,
+            lng: place.long,
+          }}
+          icon={"http://maps.google.com/mapfiles/ms/icons/green-dot.png"}
+          onClick={() => props.handleClick(place.id)}
+        />
+      ))}
       {props.bar.map((place) => (
         <Marker
           key={place.id}
@@ -65,6 +60,18 @@ function Map(props) {
           onClick={() => props.handleClick(place.id)}
         />
       ))}
+
+      <div id="wrapper">
+        
+        <div class="legend">
+        {/* <button onClick={props.showNew()} className='button'>Show New Marker</button> */}
+          <h3 class="maptitle">legend</h3>
+          <div class="square1"></div>&nbsp; arcade &nbsp;&nbsp;&nbsp;
+          <div class="square2"></div> &nbsp; bar&nbsp;&nbsp;&nbsp;
+          <div class="square3"></div>&nbsp; restaurant &nbsp;&nbsp;&nbsp;
+          <div class="square4"></div>&nbsp; other
+        </div>
+      </div>
     </GoogleMap>
   );
 }
