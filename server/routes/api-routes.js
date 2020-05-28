@@ -1,4 +1,5 @@
 const db = require("../models");
+const passport = require("../config/passport");
 
 module.exports = app => {
     //posts a new business
@@ -47,7 +48,7 @@ module.exports = app => {
 
     //gets arcade machines at a given business
     //????????????????
-    app.get("/api/businessArcades", (req,res) => {
+    app.get("/api/businessArcades/:id", (req,res) => {
         db.BusinessArcade.findAll({
             where: {
                 BusinessId: req.params.id
@@ -57,5 +58,56 @@ module.exports = app => {
         })
     })
 
+    app.get("/api/business/:id", (req,res) => {
+        db.Business.findOne({
+            where: {
+                id: req.params.id
+            }
+        }).then(result => {
+            res.json(result)
+        })
+    })
 
+//=============================================================
+//AUTH ROUTES
+    // function checkAuthenticated(req, res, next) {
+    //     if (req.isAuthenticated()) {
+    //         return next();
+    //     }
+    //     res.redirect('/login')
+    // }
+
+    // app.get('/', checkAuthenticated, (req,res) => {
+    //     res.render('/Main');
+    // })
+
+    app.post("/api/signup", (req,res) => {
+        db.User.create({
+            username: req.body.username,
+            password: req.body.password
+        }).then(() => {
+            res.redirect(307, "/api/");
+        }).catch(err => {
+            res.status(401).json(err);
+        })
+    })
+
+    app.post("/login", passport.authenticate("local"), (req,res) => {
+        res.json({
+            username: req.user.username,
+        })
+    })
+
+    app.get("/logout", (req,res) => {
+        req.logout();
+        res.redirect("/Login");
+    })
+
+    // app.all('*', function(req,res,next){
+    //     if (req.path === '/' || req.path === '/login')
+    //         next();
+    //     else{
+    //         ensureAuthenticated(req,res,next);  
+    //     }
+    // });
 }
