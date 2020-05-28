@@ -185,3 +185,62 @@ height: 550px;
     margin-right: 16px;
     font-weight: bold;
 }
+
+.legend {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgba(255, 102, 0, 0.815);
+    padding: 10px;
+    margin: 10px;
+    border: 3px solid rgb(155, 23, 0);
+    border-radius: 6px;
+    color: black;
+    text-align: center;
+  }
+
+  .square1 {
+    height:20px; 
+    width:20px;
+    display:inline-block;
+    background: red;
+   
+
+  }
+
+  .square2 {
+    height:20px; 
+    width:20px;
+    background: purple;
+    display:inline-block;
+
+
+
+  }
+
+  .square3 {
+    height:20px; 
+    width:20px;
+    background: green;
+    display:inline-block;
+
+   
+
+  }
+
+  .square4 {
+    height:20px; 
+    width:20px;
+    background: blue;
+    display:inline-block;
+
+
+  }
+
+
+  .maptitle {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-decoration: underline;
+    color: rgb(107, 0, 0);
+    -webkit-text-stroke-width: 1px;
+-webkit-text-stroke-color: rgb(228, 65, 0);
+    letter-spacing: 3px;
+  }

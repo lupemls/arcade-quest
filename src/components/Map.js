@@ -65,9 +65,21 @@ function Map(props) {
           onClick={() => props.handleClick(place.id)}
         />
       ))}
+
+          <div id="wrapper">
+      <div class="legend"><h3 class="maptitle">legend</h3>
+     <div class="square1"></div>&nbsp; arcade &nbsp;&nbsp;&nbsp;
+     <div class="square2"></div> &nbsp; bar&nbsp;&nbsp;&nbsp;
+     <div class="square3"></div>&nbsp; restaurant &nbsp;&nbsp;&nbsp;
+     <div class="square4"></div>&nbsp; other
+    
+
+      </div></div>
     </GoogleMap>
+    
   );
 }
+
 
 const WrappedMap = withScriptjs(withGoogleMap(Map));
 
