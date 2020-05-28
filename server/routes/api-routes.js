@@ -66,12 +66,37 @@ module.exports = (app) => {
 
   //posts arcade machine for a business
   //need to add relation in businessArcade
-  app.post("/api/updateArcade", (req, res) => {
-    db.Arcade.create({
-      game: req.body.game,
-      type: req.body.type,
-    });
+  app.post("/api/updateArcade", (req, res, next) => {
+    db.Arcade.findOrCreate({where:{
+      game: req.body.data.game,
+      type: req.body.data.type,
+    }})
+    .then((result) => {
+        res.json(result);
+        
+    })
   });
+
+  app.post("/api/through", (req, res)=>{
+      console.log(req.body)
+    db.BusinessArcade.create({ 
+        ArcadeId: req.body.arcade,
+        BusinessId: req.body.business
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+  })
+
+  app.get("/api/newGame/:game", (req, res) =>{
+      db.Arcade.findOne({
+          where: {
+              game: req.params.game
+          },
+      }).then((result)=>{
+          res.json(result)
+      })
+  })
 
   //gets all businesses
   app.get("/api/allBusinesses", cors(corsOptions), (req, res) => {
