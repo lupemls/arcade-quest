@@ -43,10 +43,14 @@ function Main() {
   const [newSrc, setNewsrc] = useState(Logo);
   const [newTitle, setTitle] = useState(defaultTitle);
   const [newGame, setGame] = useState(defaultGames)
-
+  // const [param, setParam] = useState(0)
+  // const [count , setcount] = useState(0)
   
 
-
+  // console.log(location)
+  
+  
+  
 
   function handleMarkerClick(mark) {
     // console.log(mark);
@@ -56,16 +60,20 @@ function Main() {
       setNewsrc(
         `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${response.data.photoRef}&key=AIzaSyCAGBQZGrklbGFY3rBelRBQ_m0yzc4pd5w`
       );
-      console.log(response.data.Arcades)
+      // console.log(response.data.Arcades)
       setTitle(response.data)
       setGame(response.data.Arcades)
     });
   }
   useEffect(() => {
+    
+    
+    
+
     axios
       .get(`/api/allBusinesses`)
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
 
         const others = response.data.filter(
           (business) => business.type === "other"
@@ -84,7 +92,7 @@ function Main() {
         setArcade(arcade);
         setBar(bars);
         setNewRes(restaurant);
-        console.log(response.data);
+        // console.log(response.data);
       })
       .catch((err) => {
         console.log(err);
@@ -104,6 +112,7 @@ function Main() {
           <Header></Header>
 
           <div className="container-one">
+       
             <div className="map">
               <div style={{ width: "700px", height: "550px" }}>
                 <WrappedMap
@@ -112,6 +121,7 @@ function Main() {
                   arcades={resArcade}
                   bar={resBar}
                   handleClick={handleMarkerClick}
+                  // showNew={newMarker}
                   position={position}
                   googleMapURL={
                     "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyCAGBQZGrklbGFY3rBelRBQ_m0yzc4pd5w"

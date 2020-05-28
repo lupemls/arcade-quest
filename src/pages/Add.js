@@ -3,7 +3,7 @@
 import React, {useState} from "react";
 import State from "./State";
 import NavigationBar from '../components/NavigationBar';
-import Header from '../components/Header';
+// import Header from '../components/Header';
 import Axios from "axios";
 import { useHistory } from "react-router-dom";
 
@@ -15,6 +15,7 @@ function Add(props) {
     const [data, setData] = useState({});
     let history = useHistory()
 
+   
     function handleChange(e){
         // console.log(e.target.value)
         setData({...data, [e.target.id]: e.target.value});
@@ -27,7 +28,7 @@ function Add(props) {
         Axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${data.address},+${data.city}&key=AIzaSyCAGBQZGrklbGFY3rBelRBQ_m0yzc4pd5w`)
         .then((response)=>{
             Axios.post("/api/addBusiness",{data,location: response.data.results[0].geometry.location})
-            history.push("/Main")
+            history.push("/Main", {update: true})
         })
     }
 
@@ -38,7 +39,7 @@ function Add(props) {
         <NavigationBar></NavigationBar>
         
       <div className="wrapper">
-        <Header></Header>
+        {/* <Header></Header> */}
 
             <form onSubmit={handleSubmit} className="newLocation">
                 <label>Name of Business</label>

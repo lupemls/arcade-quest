@@ -1,8 +1,8 @@
 //Used to update arcade machines for a location
 
 import React, { useState } from "react";
-import NavigationBar from "../components/NavigationBar";
-import Header from "../components/Header";
+// import NavigationBar from "../components/NavigationBar";
+// import Header from "../components/Header";
 import { useRouteMatch } from "react-router-dom";
 import Axios from "axios";
 
@@ -31,10 +31,10 @@ function Update(props) {
 
   return (
     <div>
-      <NavigationBar></NavigationBar>
+      {/* <NavigationBar></NavigationBar> */}
 
       <div className="wrapper">
-        <Header></Header>
+        {/* <Header></Header> */}
 
         <div className="form">
           <form onSubmit={handleSubmit} className="newMachine">

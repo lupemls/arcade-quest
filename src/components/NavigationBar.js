@@ -29,11 +29,11 @@ class NavigationBar extends React.Component {
                     
                     
                     
-                    <input type="text" className="input" placeholder="Search..." />    
+                    {/* <input type="text" className="input" placeholder="Search..." />     */}
 
                     <form inline>
-              <form type="text" placeholder="Search" className="mr-sm-2" />
-        <button class="buttons" variant="outline-light" type="submit"> SEARCH </button>
+              {/* <form type="text" placeholder="Search" className="mr-sm-2" />
+        <button  class="buttons" variant="outline-light" type="submit"> SEARCH </button> */}
   </form>
 
   
