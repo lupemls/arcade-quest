@@ -1,36 +1,63 @@
 //Used to update arcade machines for a location
 
-import React from "react";
+import React, { useState } from "react";
+// import NavigationBar from "../components/NavigationBar";
+// import Header from "../components/Header";
+import { useRouteMatch } from "react-router-dom";
+import Axios from "axios";
 
 function Update(props) {
-    return (
-        <div>
-            <form className="newMachine">
+  const [data, setData] = useState({});
+  let match = useRouteMatch("/Update/:id");
 
-                <label>Name of Game</label>
-                <input type="text" id="game"/>
+  let business = match.params.id
+  function handleChange(e) {
+    // console.log(e.target.value)
+    setData({ ...data, [e.target.id]: e.target.value });
+  }
 
-                <br></br>
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log(data.game);
+    Axios.post("/api/updateArcade", { data }).then((response) => {
+      console.log(response);
+      const arcade = response.data[0].id
+        Axios.post("/api/through", {arcade, business}).then(window.location.reload())
+      
+    });
+  }
 
-                <label>Type of Game</label>
-                <select id="gameType">
-                    <option></option>
-                    <option>Shooting</option>
-                    <option>Pinball</option>
-                    <option>Fighting</option>
-                    <option>Platforming</option>
-                    <option>Racing</option>
-                    <option>Rhythm</option>
-                    <option>Redemption/Ticket</option>
-                    <option>Other</option>
-                </select>
-                
-                <br></br>
+  // console.log(match.params.id)
 
-                <input type="submit" id="submit"></input>
-            </form>
+  return (
+    <div>
+      {/* <NavigationBar></NavigationBar> */}
+
+      <div className="wrapper">
+        {/* <Header></Header> */}
+
+        <div className="form">
+          <form onSubmit={handleSubmit} className="newMachine">
+            <label>Name of Game</label>
+            <input onChange={handleChange} type="text" id="game" />
+
+            <br></br>
+
+            <label>Type of Game</label>
+            <select onChange={handleChange} id="type">
+              <option></option>
+              <option>Arcade</option>
+              <option>Pinball</option>
+            </select>
+
+            <br></br>
+
+            <input onChange={handleChange} type="submit" id="submit"></input>
+          </form>
         </div>
-    )
+      </div>
+    </div>
+  );
 }
 
 export default Update;
