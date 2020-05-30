@@ -17,7 +17,6 @@ app.use(express.json());
 // Static directory
 app.use(express.static(`${ __dirname }/client/build`));
 
-
 //Enable CORS
 app.use(cors({
   origin: ['http://localhost:3000/'],

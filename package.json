@@ -37,6 +37,7 @@
     "passport-local": "^1.0.0",
     "sequelize": "^5.21.10"
   },
+  "homepage": "https://github.com/lupemls/arcade-quest#readme",
   "devDependencies": {
     "concurrently": "^4.1.0",
     "nodemon": "^1.18.7"
