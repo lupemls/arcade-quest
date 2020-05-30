@@ -40,7 +40,7 @@ module.exports = (app) => {
                 lat: req.body.location.lat,
                 long: req.body.location.lng,
                 payment: req.body.data.payment,
-                photoRef: response.data.result.photos[0].photo_reference,
+                photoRef: response.data.result.photos ? response.data.result.photos[0].photo_reference : 'http://placekitten.com/408/287',
                 url: response.data.result.url
             })
             .then((result) => {
@@ -74,13 +74,13 @@ module.exports = (app) => {
     }})
     .then((result) => {
         res.json(result);
-        
+
     })
   });
 
   app.post("/api/through", (req, res)=>{
       console.log(req.body)
-    db.BusinessArcade.create({ 
+    db.BusinessArcade.create({
         ArcadeId: req.body.arcade,
         BusinessId: req.body.business
     })

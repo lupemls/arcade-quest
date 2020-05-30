@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
     const Business = sequelize.define('Business', {
-        name: 
+        name:
             {
                 type: DataTypes.STRING,
                 allowNull: false
@@ -10,43 +10,43 @@ module.exports = function(sequelize, DataTypes) {
                 type: DataTypes.STRING,
                 allowNull: false
             },
-        city: 
-            {   
-                type: DataTypes.STRING,
-                allowNull: false
-            },
-        state: 
-            {                
-                type: DataTypes.STRING,
-                allowNull: false
-            },
-        zip: 
-            {                
-                type: DataTypes.INTEGER,
-                allowNull: false
-            },
-        type: 
+        city:
             {
                 type: DataTypes.STRING,
                 allowNull: false
             },
-        lat: 
+        state:
+            {
+                type: DataTypes.STRING,
+                allowNull: false
+            },
+        zip:
+            {
+                type: DataTypes.INTEGER,
+                allowNull: false
+            },
+        type:
+            {
+                type: DataTypes.STRING,
+                allowNull: false
+            },
+        lat:
             {
                 type: DataTypes.DECIMAL(10,8),
                 allowNull: false
             },
-        long: 
+        long:
             {
                 type: DataTypes.DECIMAL(11,8),
                 allowNull: false
             },
         payment: DataTypes.STRING,
-        photoRef:             
+        photoRef:
             {
                 type: DataTypes.STRING,
                 allowNull: false
-            },    
-        url:             
+            },
+        url:
             {
                 type: DataTypes.STRING,
                 allowNull: false
