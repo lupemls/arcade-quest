@@ -7,8 +7,13 @@ const passport = require("passport");
 const app = express();
 const PORT = process.env.PORT || 8080;
 
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+
 // Requiring our models for syncing
-const db = require("./models");
+const db = require("./server/models");
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -32,7 +37,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Routes
-require("./routes/api-routes.js")(app);
+require("./server/routes/api-routes.js")(app);
 // require("./routes/html-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
