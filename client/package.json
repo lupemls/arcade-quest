@@ -20,7 +20,9 @@
     "react-dom": "^16.13.1",
     "react-google-maps": "^9.4.5",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "@svgr/webpack": "^5.4.0",
+    "gh-pages": "^2.2.0"
   },
   "scripts": {
     "predeploy": "npm run build",
@@ -44,10 +46,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@svgr/webpack": "^5.4.0",
-    "gh-pages": "^2.2.0"
   },
   "proxy": "http://localhost:8080"
 }
